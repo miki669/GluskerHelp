@@ -101,54 +101,69 @@ void p3017()
 int P411Matric()
 {    
 
-    // setlocale(LC_ALL, "RU");
-    // while (true)
-    // {
-    //     std::cout << "Введите N число: (0 - выход): ";
-    //
-    //     size_t n = 0;
-    //     std::cin >> n;
-    //     if (!n) break;
-    //     std::cout << std::endl;
-    //     vector<std::vector<int>> v(n, std::vector<int>(n));
-    //
-    //     size_t i = 0, j = n - 1;
-    //     int value = n * n;
-    //     while (n != 0)
-    //     {
-    //         size_t k = 0;
-    //         do 
-    //         { 
-    //             v[i][j--] = value--;
-    //         } 
-    //         while (++k < n - 1);
-    //         for (k = 0; k < n - 1; k++) 
-    //             v[i++][j] = value--;
-    //         for (k = 0; k < n - 1; k++) 
-    //             v[i][j++] = value--;
-    //         for (k = 0; k < n - 1; k++) 
-    //             v[i--][j] = value--;
-    //
-    //         ++i; --j; n = n < 2 ? 0 : n - 2;
-    //     }
-    //
-    //     for (const auto& row : v)
-    //     {
-    //         for (int x : row) {
-    //             sleep_for(milliseconds(500));
-    //             // cout << setw(2);                 
-    //             SetConsoleTextAttribute(h, x);
-    //             cout << x << ' ';
-    //
-    //         }
-    //         cout << endl;
-    //     }
-    //
-    //     cout << endl;
-    // }
+    setlocale(LC_ALL, "RU");
+    while (true)
+    {
+        std::cout << "Input N count: (0 - Quit): ";
+    
+        size_t n = 0;
+        std::cin >> n;
+        if (!n) break;
+        std::cout << std::endl;
+        vector<std::vector<int>> v(n, std::vector<int>(n));
+    
+        size_t i = 0, j = n - 1;
+        int value = n * n;
+        while (n != 0)
+        {
+            size_t k = 0;
+            do 
+            { 
+                v[i][j--] = value--;
+            } 
+            while (++k < n - 1);
+            for (k = 0; k < n - 1; k++) 
+                v[i++][j] = value--;
+            for (k = 0; k < n - 1; k++) 
+                v[i][j++] = value--;
+            for (k = 0; k < n - 1; k++) 
+                v[i--][j] = value--;
+    
+            ++i; --j; n = n < 2 ? 0 : n - 2;
+        }
+    
+        for (const auto& row : v)
+        {
+            for (int x : row) {
+                // sleep_for(milliseconds(500)); FIX!
+                // cout << setw(2);                 
+                // SetConsoleTextAttribute(h, x); FIX!
+                cout << x << ' ';
+    
+            }
+            cout << endl;
+        }
+    
+        cout << endl;
+    }
     return 0;
 }
 
+int NOD(int i, int p)
+{
+    while (i != p)
+    {
+        if(i>p)
+        {
+            i = i-p;
+        }
+        else
+        {
+            p = (p-i);
+        }
+    }
+    return i;
+}
 int P411() {
     // clrscr();
     int mas[15][15];
@@ -230,8 +245,7 @@ int P411() {
 // П5-0-13 Напечатайте таблицу умножения
 int P5013()
 {
-    const int size = 9;
- 
+    const int size = 9; 
     cout.width(4);
     cout << "X" << " | ";    
     for (int i=1; i <= size; i++)
@@ -265,18 +279,32 @@ int P5013()
 }
 
 //П5-1-3 Найти все натуральные числа, меньшие n и взаимно простые с p.(what a P??? Glusker)
-int P5(int n) {
-    int result = n;
-    for (int i = 2; i * i <= n; ++i)
-        if (n % i == 0) {
-            while (n % i == 0)
-                n /= i;
-            result -= result / i;
+int p513()
+{
+    int n, p,i,k=0;
+    printf("Input N>2: ");
+    cin >> n;
+    printf("Input P>1: ");
+    cin >> p;
+    if(n<2 && p>1)
+    {
+        printf("Error! N || P < 1 || 2");
+        return 0;
+    }
+    printf("Int from 2 to %i ,mutually simple with %i\n",n-1, p);
+    for (i = 2; i!=n-1; i++)
+    {
+        if(NOD(i,p) ==1)
+        {
+            k =1;
+            printf("%i ",i);
         }
-    if (n > 1)
-        result -= result / n;
-    cout << result;
-    return result;
+    }
+    if(k==0)
+    {
+        printf("There are no numbers that are mutually prime with %p",p);
+    }
+    
 }
 
 
@@ -467,8 +495,9 @@ void P10023()
 int main()
 {
 
-    P411();
-return 0;
-	
+    p5();
 
+
+    
+return 0;
 }
