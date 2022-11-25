@@ -60,7 +60,8 @@ void p3017()
     
     if(b == 1) //а - периметр
     {
-        cout << "Perimetr: " << a/(2 + sqrt(2));
+        c = a/(2 + sqrt(2));
+        cout << "Perimetr: " << c;
         cout << "Mediana: " << sqrt(1.25)*c; //медиана
         cout << "Ploshad: " << c*c/2; // площадь
         cout << "Gipotenuza: " << sqrt(2)*c; // гипотенуза
@@ -69,32 +70,30 @@ void p3017()
     
     else if(b == 2) //медиана
     {
-        cout << "Mediana: " <<a/sqrt(1.25);
-        cout << "Perimetr: " << (2 + sqrt(2))*c; //периметр
-        cout << "Ploshad: " << c*c/2; // площадь
-        cout << "Gipotenuza: " << sqrt(2)*c; // гипотенуза
+        c = a/(2 + sqrt(2));
+        cout << "Mediana: " <<c << endl;
+        cout << "Perimetr: " << (2 + sqrt(2))*c << endl; //периметр
+        cout << "Ploshad: " << c*c/2 << endl; // площадь
+        cout << "Gipotenuza: " << sqrt(2)*c << endl; // гипотенуза
     }
     
     else if(b == 3) //площадь
     {
-        cout << "Ploshad: " << sqrt(2*a);
-        cout << "Perimetr: " << (2 + sqrt(2))*c; //периметр
-        cout << "Mediana: " << sqrt(1.25)*c; // медиана
-        cout << "Gipotenuza: " << sqrt(2)*c; // гипотенуза
+        c = a/(2 + sqrt(2));
+        cout << "Ploshad: " <<c << endl;
+        cout << "Perimetr: " << (2 + sqrt(2))*c << endl; //периметр
+        cout << "Mediana: " << sqrt(1.25)*c << endl; // медиана
+        cout << "Gipotenuza: " << sqrt(2)*c << endl; // гипотенуза
     }
     
     else if(b == 4) //гипотенуза
     {
-        cout << "Gipotenuza: " << a/sqrt(2);
-        cout << "Perimetr: " << (2 + sqrt(2))*c; //периметр
-        cout << "Mediana: " << sqrt(1.25)*c; // медиана
-        cout << "Ploshad: " << c*c/2; // площадь
+        c = a/(2 + sqrt(2));
+        cout << "Gipotenuza: " <<c << endl;
+        cout << "Perimetr: " << (2 + sqrt(2))*c << endl; //периметр
+        cout << "Mediana: " << sqrt(1.25)*c << endl; // медиана
+        cout << "Ploshad: " << c*c/2 << endl; // площадь
     }    
-    
-    
-        
-   
-
 }
 //P -4
 //П4-1-1 Заполните квадрат n на n по спирали в направлении часовой стрелки от наружной части квадрата к внутренней
@@ -468,7 +467,7 @@ void P10023()
 int main()
 {
 
-    p3017();
+    P411();
 return 0;
 	
 
