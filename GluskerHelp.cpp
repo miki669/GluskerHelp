@@ -51,46 +51,49 @@ void p3017()
 {    
     int b;
     double a;
-    cin >> b >> a;
+    printf("Input B: ");
+    cin >> b;
+    printf("Input a: ");
+    cin >> a;
     double c; //катет
     double result[4];
     
     if(b == 1) //а - периметр
     {
-        c = a/(2 + sqrt(2));
-        result[1] = sqrt(1.25)*c; //медиана
-        result[2] = c*c/2; // площадь
-        result[3] = sqrt(2)*c; // гипотенуза
+        cout << "Perimetr: " << a/(2 + sqrt(2));
+        cout << "Mediana: " << sqrt(1.25)*c; //медиана
+        cout << "Ploshad: " << c*c/2; // площадь
+        cout << "Gipotenuza: " << sqrt(2)*c; // гипотенуза
+        
     }
     
     else if(b == 2) //медиана
     {
-        c = a/sqrt(1.25);
-        result[1] = (2 + sqrt(2))*c; //периметр
-        result[2] = c*c/2; // площадь
-        result[3] = sqrt(2)*c; // гипотенуза
+        cout << "Mediana: " <<a/sqrt(1.25);
+        cout << "Perimetr: " << (2 + sqrt(2))*c; //периметр
+        cout << "Ploshad: " << c*c/2; // площадь
+        cout << "Gipotenuza: " << sqrt(2)*c; // гипотенуза
     }
     
     else if(b == 3) //площадь
     {
-        c = sqrt(2*a);
-        result[1] = (2 + sqrt(2))*c; //периметр
-        result[2] = sqrt(1.25)*c; // медиана
-        result[3] = sqrt(2)*c; // гипотенуза
+        cout << "Ploshad: " << sqrt(2*a);
+        cout << "Perimetr: " << (2 + sqrt(2))*c; //периметр
+        cout << "Mediana: " << sqrt(1.25)*c; // медиана
+        cout << "Gipotenuza: " << sqrt(2)*c; // гипотенуза
     }
     
     else if(b == 4) //гипотенуза
     {
-        c = a/sqrt(2);
-        result[1] = (2 + sqrt(2))*c; //периметр
-        result[2] = sqrt(1.25)*c; // медиана
-        result[3] = c*c/2; // площадь
+        cout << "Gipotenuza: " << a/sqrt(2);
+        cout << "Perimetr: " << (2 + sqrt(2))*c; //периметр
+        cout << "Mediana: " << sqrt(1.25)*c; // медиана
+        cout << "Ploshad: " << c*c/2; // площадь
     }    
     
-    for(int i = 1; i < 4; i++)
-        cout << result[i] << endl;
+    
         
-    return;
+   
 
 }
 //P -4
@@ -465,7 +468,7 @@ void P10023()
 int main()
 {
 
-
+    p3017();
 return 0;
 	
 
