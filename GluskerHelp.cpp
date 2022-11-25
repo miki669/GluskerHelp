@@ -308,22 +308,21 @@ int p513()
 }
 
 
-//P-6-0-18
-int P6()
+//P-6-0-18 
+int P6018()
 {
-    float border,sum,summand,fib, fibprev, fibprevprev,part;
-    double number,f;
-    setlocale(0, "rus");
-    printf("Введите border: ");
+    float border, summand;
+    double f;
+    printf("input border: ");
     scanf_s("%f", &border);
-    sum = 1 * 9 / 2 + 2 * 27 / 6; 
-    fibprev = 2;
-    fibprevprev = 1;
-    part = 27;
+    float sum = 1 * 9 / 2 + 2 * 27 / 6; 
+    float fibprev = 2;
+    float fibprevprev = 1;
+    float part = 27;
     f = 3;
-    number = 6 ; //factorial
+    double number = 6; //factorial
     do {
-        fib = fibprev + fibprevprev;
+        float fib = fibprev + fibprevprev;
         fibprevprev = fibprev;
         fibprev = fib;
         f = f + 1;
@@ -336,11 +335,11 @@ int P6()
     printf("%f",sum);
     return 0;
 }
-//P -7
+//P -П7-1-6 Дан одномерный массив натуральных чисел. Выведите на экран таблицу, в которой перечислены сумма цифр элемента массива (без повторений, в порядке убывания) и сколько раз элементы с такой суммой цифр встречаются в массиве.
 void P716()
 {      
     setlocale(LC_ALL, "Ru");
-    std::cout << "Hello, ф or \u0444!\n";
+   
     const string s = "[Sum items] ------------- [Replay  items]";
     int n;
     int const size = 999;
@@ -365,16 +364,13 @@ void P716()
         }
         Array2[i] = countDigit;
     }
-    sort(Array1, Array1 + n, greater<int>());
-
-    for (int i = 0; i < n; i++)
+    sort(Array1, Array1 + n);
+    for (int i =  n -1; i>=0; i--)
     {
         cout << i << "- [" << Array2[i] << "]" << endl;
     }
-    int a = 0;
-    cout << s ;
-
-    for (int i = 0; i < n;i++) {
+    cout << s;
+    for (int i =  n -1; i>=0; i--) {
         countIdentic = 0;
         for (int j = 0; j < n;j++) {
             if (Array2[i] == Array2[j]) {
@@ -383,10 +379,7 @@ void P716()
         }
         cout << "\n|" << Array2[i] << "                 |                   " << countIdentic << "|";
     }
-    cout <<endl<< s << endl;
-
-
-   
+    cout <<endl<< s << endl;   
 }
 double my_asin(double x)
 {
@@ -465,8 +458,57 @@ int P7LevelTwo()
         
 }
 
-//P -8
+//П8-1-1 Дан квадратный двумерный массив, повернуть его на 90 градусов по часовой стрелке без использования второго массива.
+int ** turn90 (int n, int **a) {
+    int i,j;
+    int **b;
+    b = new int * [n];
+    for (i=0; i<n; i++) b[i]= new int [n];
+    for (i=0; i<n; i++)
+        for (j=0; j<n; j++) {
+            b[j][n-i-1]=a[i][j];
+        }
+    return b;
+}
+ 
+void out (const char *s, int n, int **a) {
+    int i,j;
+    printf ("\n%s",s);
+    for (i=0; i<n; i++) {
+        printf ("\n");
+        for (j=0; j<n; j++) printf ("%d ",a[i][j]);
+    }
+}
 
+int P811()
+{
+    int n;
+    printf("Input size array ( N x N !>10)\n");
+    scanf_s("%i",&n);
+    if(n>10)
+    {
+        printf("N !> 10");
+        return 0;      
+    }
+    
+    int i, k=1;
+    auto a = new int*[n];
+    for (i=0; i<n; i++)
+    {
+        printf("input element\n");
+        scanf_s("%i",&a[i]);   
+        // a[i]= new int [n];
+    
+    }
+    for (i=0; i<n; i++)
+        for (int j = 0; j<n; j++)
+            a[i][j]=k++;
+    out ("Before array",n,a);
+    int **b=turn90(n,a);
+    out ("After array",n,b);
+    
+    return 0;
+}
 //P -9
 
 //P -10 Дана строка. Есть ли в ней совпадающие символы?
@@ -495,7 +537,7 @@ void P10023()
 int main()
 {
 
-    p5();
+    P811();
 
 
     
