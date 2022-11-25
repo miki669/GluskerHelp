@@ -1,5 +1,6 @@
+
 #include <iostream>
-#define _CRT_SECURE_NO_WARNINGS
+
 #include <cstdlib>
 #include <cmath>
 #include <string> 
@@ -16,6 +17,8 @@
 #include <io.h>
 #include <fcntl.h>
 #include <algorithm>
+#include <optional>
+#define _CRT_SECURE_NO_WARNINGS
 using namespace std;
 //P -1
 void p1()
@@ -336,6 +339,26 @@ int P6018()
     return 0;
 }
 //P -П7-1-6 Дан одномерный массив натуральных чисел. Выведите на экран таблицу, в которой перечислены сумма цифр элемента массива (без повторений, в порядке убывания) и сколько раз элементы с такой суммой цифр встречаются в массиве.
+int P715()
+{
+    std::vector<std::optional<int>> vec(10);
+    srand(GetTickCount64());
+    for (int i = 0; i < vec.size(); i++) {
+        vec[i] = rand() % 10;
+        std::cout << vec[i].value() << " ";
+    }
+    std::cout << std::endl;
+    for (int i = 0; i < vec.size(); i++)
+        for (int j = i + 1; j < vec.size(); j++) 
+            if (vec[j] && vec[i] == vec[j])
+                vec[j] = std::nullopt;
+
+    for (auto& rem : vec)
+        if(rem)
+            std::cout << *rem << " ";
+    system("pause");
+    return 0;
+}
 void P716()
 {      
     setlocale(LC_ALL, "Ru");
@@ -495,9 +518,9 @@ int P811()
     auto a = new int*[n];
     for (i=0; i<n; i++)
     {
-        printf("input element\n");
-        scanf_s("%i",&a[i]);   
-        // a[i]= new int [n];
+        // printf("input element\n");
+        // scanf_s("%i",&a[i]);   
+        a[i]= new int [n];
     
     }
     for (i=0; i<n; i++)
@@ -537,7 +560,7 @@ void P10023()
 int main()
 {
 
-    P811();
+    P715();
 
 
     
