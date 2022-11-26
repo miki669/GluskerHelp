@@ -17,7 +17,9 @@
 #include <io.h>
 #include <fcntl.h>
 #include <algorithm>
+#include <fstream>
 #include <optional>
+#include <stack>
 #define _CRT_SECURE_NO_WARNINGS
 using namespace std;
 //P -1
@@ -495,11 +497,10 @@ int ** turn90 (int n, int **a) {
 }
  
 void out (const char *s, int n, int **a) {
-    int i,j;
     printf ("\n%s",s);
-    for (i=0; i<n; i++) {
+    for (int i = 0; i<n; i++) {
         printf ("\n");
-        for (j=0; j<n; j++) printf ("%d ",a[i][j]);
+        for (int j = 0; j<n; j++) printf ("%d ",a[i][j]);
     }
 }
 
@@ -550,19 +551,133 @@ void P10023()
     cout << "NO" << endl;
    
 }
-//P -11
-
+//П11-2-5 Выведите на экран список всех глобальных переменных, использованных в программе.
+int P1125()
+{
+    std::vector<std::string> keywords = {"namespace", "enum", "int", "char","string"};
+    std::ifstream ifs("GluskerHelp.cpp");
+    std::string s;  
+    stack<char> scopes;
+    while (std::getline(ifs, s))
+    {
+       
+        if (s.find("{") != std::string::npos)
+        {
+            scopes.push('{');
+        }
+        else if (s.find("}") != std::string::npos)
+        {
+            scopes.pop();
+        }
+        if (!scopes.empty())
+        {
+            continue;
+        }
+        bool is_global = true;
+        for (std::vector<std::string>::iterator iter = keywords.begin(); iter != keywords.end(); ++iter)
+        {
+            size_t idx = s.find(*iter);
+            if (idx != std::string::npos)
+            {
+                size_t end_idx = idx + iter->length();
+                if (s[end_idx] != ' ')
+                {
+                    continue;
+                }
+                else
+                {
+                    is_global = false;
+                    break;
+                }
+            }
+        }
+        if (s.find(";") != std::string::npos && s.find("(") == std::string::npos && s.find("#") == std::string::npos
+            && s.find("{") == std::string::npos && s.find("}") == std::string::npos)
+        {
+            if (!is_global)
+            {
+                std::cout << "Global: " << s << std::endl;
+            }
+            else
+            {
+                std::cout << " Error " << s << std::endl;
+                
+            }
+        }
+    }
+    system("pause");
+    return 0;
+}
 //P -12
 
+//P -13
+
+//P -14
+
+//P -15
+
+//P -16
+
+//P -17
+
+//P -18
+
+//P -19
+
+//P -20
 
 
 
+int zadacha()
+{
+    int month;
+    printf("Input month: !>12\n");
+    scanf("%i",&month);
+    if(month > 12 && month <= 0)
+    {
+        printf("month !> 12\n");
+        return 1;
+    }
+    if(month == 1)
+        printf("January");
+    else if(month == 2)
+        printf("February");
+    else if(month == 3)
+        printf("March");
+    else if(month == 4)
+        printf("April");
+    else if(month == 5)
+        printf("May");
+    else if(month == 6)
+        printf("June");
+    else if(month == 7)
+        printf("July");
+    else if(month == 8)
+        printf("August");
+    else if(month == 9)
+        printf("September");
+    else if(month == 10)
+        printf("October");
+    else if(month == 11)
+        printf("November");
+    else if(month == 12)
+        printf("December");
+    
+}
 int main()
 {
-
-    P715();
-
-
-    
-return 0;
+    zadacha();
 }
+void valeev()
+{
+
+    float a, b, c,d,e;
+        printf("Введите  a: ");
+        scanf_s("%f", &a);
+        printf("Введите  b: ");
+        scanf_s("%f", &b);
+        printf("Введите  c: ");
+        scanf_s("%f", &c);
+        printf("Введите  d: ");
+        scanf_s("%f", &d);
+        printf("Введите  e: "
