@@ -5,6 +5,6 @@ namespace practica
     
     void p1()
     {
-        //pascal(
+        //practica1.pas (
     }
 }

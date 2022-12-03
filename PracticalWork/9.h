@@ -1,4 +1,6 @@
 #include <list>
+#include <sstream>
+#include <string>
 
 namespace practica
 {

@@ -1,3 +1,5 @@
+#include <algorithm>
+
 namespace practica
 {
     void P716()

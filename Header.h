@@ -1,5 +1,5 @@
 #include "PracticalWork/1.h"
-#include "PracticalWork/2.h"
+
 #include "PracticalWork/3.h"
 #include "PracticalWork/4.h"
 #include "PracticalWork/5.h"
