@@ -109,7 +109,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -156,6 +156,31 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GluskerHelp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PracticalWork\1.h" />
+    <ClInclude Include="PracticalWork\10.h" />
+    <ClInclude Include="PracticalWork\11.h" />
+    <ClInclude Include="PracticalWork\12.h" />
+    <ClInclude Include="PracticalWork\13.h" />
+    <ClInclude Include="PracticalWork\14.h" />
+    <ClInclude Include="PracticalWork\15.h" />
+    <ClInclude Include="PracticalWork\16.h" />
+    <ClInclude Include="PracticalWork\17.h" />
+    <ClInclude Include="PracticalWork\18.h" />
+    <ClInclude Include="PracticalWork\19.h" />
+    <ClInclude Include="PracticalWork\2.h" />
+    <ClInclude Include="PracticalWork\20.h" />
+    <ClInclude Include="PracticalWork\3.h" />
+    <ClInclude Include="PracticalWork\4.h" />
+    <ClInclude Include="PracticalWork\5.h" />
+    <ClInclude Include="PracticalWork\6.h" />
+    <ClInclude Include="PracticalWork\7.h" />
+    <ClInclude Include="PracticalWork\8.h" />
+    <ClInclude Include="PracticalWork\9.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Header.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
