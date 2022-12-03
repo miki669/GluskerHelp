@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
     practica::p1();
-    practica::p2();
+  
     return 0;
 }
 
