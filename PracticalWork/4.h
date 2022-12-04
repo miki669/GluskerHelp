@@ -51,7 +51,8 @@ namespace practica
                 y += 1;
                 if(flag){
                     increment = -increment;
-                    continue;
+                    flag = false;
+                    
                 }
                 flag = true;
             }
@@ -60,7 +61,9 @@ namespace practica
                 x = 1;
                 increment = -increment;
                 y -= 1;
+               
             }
+            
             countn++;
         } while (cell <= n*n);
         printf("\n\n\n\n");
