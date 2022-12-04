@@ -32,10 +32,11 @@ namespace practica
         }
         system("cls");
         short countn = 1;
+        bool flag = false;
         do
         {
             SetConsoleTextAttribute(hConsole, countn);
-            gotoxy(x -1, y);
+            gotoxy(x - 1, y);
             std::this_thread::sleep_for(std::chrono::seconds(1));
             std::cout << number;
             x = x + increment;
@@ -44,18 +45,26 @@ namespace practica
             if (number > 9) {
                 number = 0;
             }
-            else if (x > n) {
+            else if (x > n)
+            {
                 x = n;
-                increment = -increment;
                 y += 1;
+                if(flag){
+                    increment = -increment;
+                    continue;
+                }
+                flag = true;
             }
-            else if (x == 0) {
+            else if (x == 0)
+                {
                 x = 1;
                 increment = -increment;
-                y += 1;
+                y -= 1;
             }
             countn++;
-        } while (cell <= n * n);
+        } while (cell <= n*n);
+        printf("\n\n\n\n");
+        system("pause");
         return 0;
     }
 }
