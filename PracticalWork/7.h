@@ -4,16 +4,12 @@ namespace practica
 {
     void P716()
     {
-        setlocale(LC_ALL, "Ru");
-
         const std::pmr::string s = "[Sum items] ------------- [Replay  items]";
         int n;
-        int const size = 999;
-
+        int const size = 10;
         int Array1[size], swap, Array2[size];
         int countDigit = 0;
         int countIdentic = 0;
-
         std::cout << "input size array: " << std::endl;
         std::cin >> n;
         std::cout << "input " << n << " count for array: " << std::endl;
@@ -38,7 +34,7 @@ namespace practica
         {
             std::cout << i << "- [" << Array2[i] << "]" << std::endl;
         }
-        std::cout << s;
+        std::cout<< std::endl << s; 
         for (int i = n - 1; i >= 0; i--)
         {
             countIdentic = 0;
@@ -49,8 +45,9 @@ namespace practica
                     countIdentic++;
                 }
             }
-            std::cout << "\n|" << Array2[i] << "                 |                   " << countIdentic << "|";
+            std::cout << "\n|" << Array2[i] << "        |               |            " << countIdentic << "|";
         }
         std::cout << std::endl << s << std::endl;
+        system("pause");
     }
 }

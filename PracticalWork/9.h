@@ -1,7 +1,7 @@
 #include <list>
 #include <sstream>
 #include <string>
-
+#include <vector>
 namespace practica
 {
     //П9-1-10 Выведите на экран в алфавитном порядке все слова строки, в которых есть четыре подряд идущие согласные буквы.
@@ -26,8 +26,8 @@ namespace practica
 
 int p9110()
 {
-            std::string _String;
-            std::string s;
+        std::string _String;
+        std::string s;
         std::string consonants = "bcdfghjlkmnpqrstvwxz";
         std::cout << "Input string!" << std::endl;
         std::getline(std::cin, _String);

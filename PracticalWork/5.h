@@ -35,7 +35,7 @@ namespace practica
         std::cin.get();
         return 0;
     }
-    int NOD(int i, int p)
+    int nod(int i, int p) //=> Наибольщий общий делитель
     {
         while (i != p)
         {
@@ -53,20 +53,20 @@ namespace practica
     //П5-1-3 Найти все натуральные числа, меньшие n и взаимно простые с p.(what a P??? Glusker)
     int p513()
     {
-        int n, p, i, k = 0;
+        int n, p, k = 0;
         printf("Input N>2: ");
-        std::cin >> n;
+        scanf_s("%i",&n);
         printf("Input P>1: ");
-        std::cin >> p;
+        scanf_s("%i",&p);
         if (n < 2 && p > 1)
         {
             printf("Error! N || P < 1 || 2");
             return 0;
         }
         printf("Int from 2 to %i ,mutually simple with %i\n", n - 1, p);
-        for (i = 2; i != n - 1; i++)
+        for (int i = 2; i != n - 1; i++)
         {
-            if (NOD(i, p) == 1)
+            if (nod(i, p) == 1) // finctions | up
             {
                 k = 1;
                 printf("%i ", i);
