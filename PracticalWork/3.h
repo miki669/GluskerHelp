@@ -2,12 +2,12 @@ namespace practica
 {
     int p3017()
     {
-        int b;
-        double a;
+        int a, b;
+      
         printf("Input B: ");
-        std::cin >> b;
+       scanf_s("%i",&b);
         printf("Input a: ");
-        std::cin >> a;
+        scanf("%i",a);
         double c; //катет
         double result[4];
         if (a <= 0)
