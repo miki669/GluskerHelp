@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    practica::main12();
+    practica::p3017();
   
     return 0;
 }
