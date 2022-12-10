@@ -1,9 +1,12 @@
-#include <list>
+#pragma once
+#include <set>
 #include <sstream>
 #include <string>
-#include <vector>
+
 namespace practica
 {
+    //hello bbbb
+    //bbbbb => cccc
     //П9-1-10 Выведите на экран в алфавитном порядке все слова строки, в которых есть четыре подряд идущие согласные буквы.
     void split(const std::string& str, std::vector<std::string>& v)
     {
@@ -11,7 +14,7 @@ namespace practica
         ss >> std::noskipws;
         std::string field;
         char ws_delim;
-        while (1)
+        while (true)
         {
             if (ss >> field)
                 v.push_back(field);
@@ -26,46 +29,40 @@ namespace practica
 
 int p9110()
 {
+        std::string consonants = "bcdfghjlkmnpqrstvwxz";//Список согласных букв
         std::string _String;
-        std::string s;
-        std::string consonants = "bcdfghjlkmnpqrstvwxz";
+        std::set <std::string> StringArray;
         std::cout << "Input string!" << std::endl;
-        std::getline(std::cin, _String);
-        std::vector<std::string> stringlist;
-        split(_String, stringlist);
-        //std::copy(stringlist.begin(), stringlist.end(), std::ostream_iterator<std::string>(std::cout, "\n"));
-        //std::cout << "\n";
-        std::vector<std::string>::value_type variableString;
-        // std::vector<std::string>::value_type variableList;
-        std::list<std::string> variableList;
+        std::getline(std::cin, _String);// ввод строки
         
-        int count = 1;
-        for (auto& i : stringlist)
-            for (char j : i)
-                for (const char consonant : consonants)
-                     if (j == consonant)
-                     {                                      
-                         if(variableString == i)
-                         {
-                             count++;
-                             if(count >= 4)
-                             {                                 
-                                 printf("Good\n");
-                                 variableList.push_back(variableString);                                 
-                             }
-                         }
-                         else
-                         {
-                             count = 1;
-                         }
-                         variableString = i;                             
-                     }
-        
-        for (auto& i : variableList)
-        {
-            std::cout << i;
-        }
+        int count = 0;
+        bool flag = false;
+        std::vector<std::string> _String1;
+        split(_String, _String1);//разделение по словам
+        for (auto& i : _String1) // проходим по каждому слову
+            for (char k : i) // проходим по каждой буквк
+            {               
+                if(consonants.find(k) != std::string::npos)// ищем в списке соответсвующую букву
+                {
+                    flag = true;
+                    count++;
+                    if(count>=4 && flag)
+                    {
+                        StringArray.insert(i);
+                    }
+                }
+                else
+                {
+                    flag = false;
+                    count=0;
+                }
+            }
+        std::cout << "After string!" << std::endl;
+        for(auto& l : StringArray) //вывод множество(set)
+            std:: cout << l << std::endl;
         return 0;
+        
+        
 }       
         
         

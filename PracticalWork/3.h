@@ -5,7 +5,7 @@ namespace practica
         int a, b;
       
         printf("Input B: ");
-       scanf_s("%i",&b);
+        scanf_s("%i",&b);
         printf("Input a: ");
         scanf_s("%i",&a);
         double c; //катет

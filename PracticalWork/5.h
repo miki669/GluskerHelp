@@ -76,5 +76,6 @@ namespace practica
         {
             printf("There are no numbers that are mutually prime with %i", p);
         }
+        system("pause");
     }
 }

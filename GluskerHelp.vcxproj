@@ -176,6 +176,7 @@
     <ClInclude Include="PracticalWork\7.h" />
     <ClInclude Include="PracticalWork\8.h" />
     <ClInclude Include="PracticalWork\9.h" />
+    <ClInclude Include="PracticalWork\ComplexCubicSolver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header.h" />
