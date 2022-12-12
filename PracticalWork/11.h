@@ -7,7 +7,7 @@ namespace practica
     int P1125()
     {
         std::vector<std::string> keywords = {"namespace", "enum", "int", "char", "string"};
-        std::ifstream ifs("1.cpp");
+        std::ifstream ifs("p1125.txt");
         std::string s;
         std::stack<char> scopes;
         while (std::getline(ifs, s))

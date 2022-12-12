@@ -108,7 +108,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -177,12 +177,16 @@
     <ClInclude Include="PracticalWork\8.h" />
     <ClInclude Include="PracticalWork\9.h" />
     <ClInclude Include="PracticalWork\ComplexCubicSolver.h" />
+    <ClInclude Include="PracticalWork\TextTable.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header.h" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="PracticalWork\practica1.pas" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Misk" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

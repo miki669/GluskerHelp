@@ -4,7 +4,7 @@ namespace practica
 {
     void P716()
     {
-        const std::pmr::string s = "[Sum items] ------------- [Replay  items]";
+        const std::string s = "[Sum items] ------------- [Replay  items]";
         int n;
         int const size = 10;
         int Array1[size], swap, Array2[size];

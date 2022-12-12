@@ -1,5 +1,4 @@
 #include "PracticalWork/1.h"
-
 #include "PracticalWork/3.h"
 #include "PracticalWork/4.h"
 #include "PracticalWork/5.h"
@@ -10,3 +9,10 @@
 #include "PracticalWork/10.h"
 #include "PracticalWork/11.h"
 #include "PracticalWork/12.h"
+#include "PracticalWork/13.h"
+#include "PracticalWork/14.h"
+#include "PracticalWork/15.h"
+#include "PracticalWork/16.h"
+#include "PracticalWork/17.h"
+#include "PracticalWork/18.h"
+#include "PracticalWork/19.h"
