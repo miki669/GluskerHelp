@@ -115,9 +115,7 @@ namespace practica
                  {
                      d_command(number);
                      break;
-                 }
-                                    
-           
+                 }           
              }
         } 
         

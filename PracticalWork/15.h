@@ -18,13 +18,32 @@ namespace practica
         
         return test;
     }
-    void ParseOddNumbers  (long long n, vector<int>& vec)
+    void ParseOddNumbers  (long long n, vector<int>& vec) //метод для работы с числом с помощью колекции
     {
         if(n%2 != 0)
             vec.push_back (n%10);
         int temp = n / 10;  
         if (temp == 0 ) return;
         ParseOddNumbers  (temp, vec);
+    }
+   void ParseOddNumbers1(long int number)//метод для работы только с интами
+    {
+        int c,x;
+        int b=0;
+        cout<<"Enter number: ";
+        cin>>c; 
+        while(c)
+        {
+            if(c%2!=0)
+                b=b*10+c%10;
+            c/=10;
+        }
+        while(b)
+        {
+            c=c*10+b%10;
+            b/=10;
+        }
+        cout<<c<<endl;        
     }
         
     int P1514()
@@ -33,7 +52,8 @@ namespace practica
         printf("Enter number: ");
         cin >>n;
         vector <int> vec;
-        ParseOddNumbers  (n, vec);
+        ParseOddNumbers1(n);
+        ParseOddNumbers(n, vec);
         copy (vec.rbegin(), vec.rend(), ostream_iterator <int> (cout));
         cout << endl;
         return 0;

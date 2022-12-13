@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    practica::P1514(); 
+    practica::ParseOddNumbers1(); 
 
     system("pause");
     return 0;
