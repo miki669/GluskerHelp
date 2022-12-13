@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    practica::P14115(); 
+    practica::P1514(); 
 
     system("pause");
     return 0;
